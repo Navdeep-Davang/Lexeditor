@@ -6,7 +6,6 @@
  *
  */
 
-import type {JSX} from 'react';
 
 import {AutoFocusPlugin} from '@lexical/react/LexicalAutoFocusPlugin';
 import {CharacterLimitPlugin} from '@lexical/react/LexicalCharacterLimitPlugin';

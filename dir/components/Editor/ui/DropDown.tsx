@@ -6,7 +6,6 @@
  *
  */
 
-import type {JSX} from 'react';
 
 import {isDOMNode} from 'lexical';
 import * as React from 'react';

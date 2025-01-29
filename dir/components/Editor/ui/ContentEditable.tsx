@@ -6,7 +6,6 @@
  *
  */
 
-import type {JSX} from 'react';
 
 import './ContentEditable.css';
 

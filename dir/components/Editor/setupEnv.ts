@@ -21,7 +21,7 @@ export default (() => {
         const value = JSON.parse(urlSearchParams.get(param) ?? 'true');
         INITIAL_SETTINGS[param as keyof Settings] = Boolean(value);
       } catch (error) {
-        console.warn(`Unable to parse query parameter "${param}"`);
+        console.warn(`Unable to parse query parameter "${param}" "${error}`);
       }
     }
   }
