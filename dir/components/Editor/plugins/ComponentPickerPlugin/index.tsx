@@ -6,7 +6,6 @@
  *
  */
 
-import type {JSX} from 'react';
 
 import {$createCodeNode} from '@lexical/code';
 import {

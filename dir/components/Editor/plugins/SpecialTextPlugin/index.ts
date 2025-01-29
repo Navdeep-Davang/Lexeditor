@@ -6,7 +6,6 @@
  *
  */
 import type {LexicalEditor} from 'lexical';
-import type {JSX} from 'react';
 
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {TextNode} from 'lexical';
@@ -17,7 +16,7 @@ import {
   SpecialTextNode,
 } from '../../nodes/SpecialTextNode';
 
-const BRACKETED_TEXT_REGEX = /\[([^\[\]]+)\]/; // eslint-disable-line
+const BRACKETED_TEXT_REGEX = /\[([^\[\]]+)\]/;
 
 function $findAndTransformText(node: TextNode): null | TextNode {
   const text = node.getTextContent();

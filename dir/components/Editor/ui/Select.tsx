@@ -6,7 +6,6 @@
  *
  */
 
-import type {JSX} from 'react';
 
 import './Select.css';
 
@@ -15,6 +14,8 @@ import * as React from 'react';
 type SelectIntrinsicProps = JSX.IntrinsicElements['select'];
 interface SelectProps extends SelectIntrinsicProps {
   label: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
 export default function Select({

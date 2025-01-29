@@ -7,7 +7,6 @@
  */
 
 import type {BaseSelection, NodeKey, TextNode} from 'lexical';
-import type {JSX} from 'react';
 
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {$isAtNodeEnd} from '@lexical/selection';

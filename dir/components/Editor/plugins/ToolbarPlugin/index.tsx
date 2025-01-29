@@ -6,7 +6,7 @@
  *
  */
 
-import type {JSX} from 'react';
+
 
 import {
   $isCodeNode,

@@ -7,7 +7,6 @@
  */
 import type {TableCellNode, TableDOMCell, TableMapType} from '@lexical/table';
 import type {LexicalEditor} from 'lexical';
-import type {JSX} from 'react';
 
 import './index.css';
 
@@ -141,11 +140,15 @@ function TableCellResizer({editor}: {editor: LexicalEditor}): JSX.Element {
       }
     };
 
-    const onMouseDown = (event: MouseEvent) => {
+    const onMouseDown = (
+      // event: MouseEvent
+    ) => {
       updateIsMouseDown(true);
     };
 
-    const onMouseUp = (event: MouseEvent) => {
+    const onMouseUp = (
+      // event: MouseEvent
+    ) => {
       updateIsMouseDown(false);
     };
 

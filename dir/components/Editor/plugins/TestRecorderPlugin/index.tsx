@@ -7,7 +7,6 @@
  */
 
 import type {BaseSelection, LexicalEditor} from 'lexical';
-import type {JSX} from 'react';
 
 import {useLexicalComposerContext} from '@lexical/react/LexicalComposerContext';
 import {
@@ -18,8 +17,8 @@ import {
 } from 'lexical';
 import * as React from 'react';
 import {useCallback, useEffect, useRef, useState} from 'react';
-import {IS_APPLE} from 'shared/environment';
-import useLayoutEffect from 'shared/useLayoutEffect';
+import {IS_APPLE} from '../../shared/environment';
+import useLayoutEffect from '../../shared/useLayoutEffect';
 
 const copy = (text: string | null) => {
   const textArea = document.createElement('textarea');
@@ -31,7 +30,6 @@ const copy = (text: string | null) => {
   textArea.select();
   try {
     const result = document.execCommand('copy');
-    // eslint-disable-next-line no-console
     console.log(result);
   } catch (error) {
     console.error(error);

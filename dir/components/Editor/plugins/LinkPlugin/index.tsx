@@ -6,7 +6,7 @@
  *
  */
 
-import type {JSX} from 'react';
+
 
 import {LinkPlugin as LexicalLinkPlugin} from '@lexical/react/LexicalLinkPlugin';
 import * as React from 'react';

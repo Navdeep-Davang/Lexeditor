@@ -7,7 +7,6 @@
  */
 
 import type {LexicalEditor} from 'lexical';
-import type {JSX} from 'react';
 
 import {$createCodeNode, $isCodeNode} from '@lexical/code';
 import {
@@ -93,7 +92,7 @@ async function shareDoc(doc: SerializedDocument): Promise<void> {
 }
 
 export default function ActionsPlugin({
-  isRichText,
+  // isRichText,
   shouldPreserveNewLinesInMarkdown,
 }: {
   isRichText: boolean;
@@ -137,7 +136,11 @@ export default function ActionsPlugin({
 
   useEffect(() => {
     return editor.registerUpdateListener(
-      ({dirtyElements, prevEditorState, tags}) => {
+      ({
+        dirtyElements, 
+        // prevEditorState, 
+        tags
+      }) => {
         // If we are in read only mode, send the editor state
         // to server and ask for validation if possible.
         if (
