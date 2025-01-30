@@ -19,7 +19,6 @@ import type {
   SerializedLexicalNode,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import {
   $applyNodeReplacement,
@@ -128,7 +127,9 @@ export class InlineImageNode extends DecoratorNode<JSX.Element> {
 
   static importDOM(): DOMConversionMap | null {
     return {
-      img: (node: Node) => ({
+      img: (
+        // node: Node
+      ) => ({
         conversion: $convertInlineImageElement,
         priority: 0,
       }),

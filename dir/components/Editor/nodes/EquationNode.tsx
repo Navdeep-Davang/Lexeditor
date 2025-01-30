@@ -9,13 +9,12 @@
 import type {
   DOMConversionMap,
   DOMConversionOutput,
-  EditorConfig,
+  // EditorConfig,
   LexicalNode,
   NodeKey,
   SerializedLexicalNode,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import katex from 'katex';
 import {$applyNodeReplacement, DecoratorNode, DOMExportOutput} from 'lexical';
@@ -80,7 +79,9 @@ export class EquationNode extends DecoratorNode<JSX.Element> {
     };
   }
 
-  createDOM(_config: EditorConfig): HTMLElement {
+  createDOM(
+    // _config: EditorConfig
+  ): HTMLElement {
     const element = document.createElement(this.__inline ? 'span' : 'div');
     // EquationNodes should implement `user-action:none` in their CSS to avoid issues with deletion on Android.
     element.className = 'editor-equation';

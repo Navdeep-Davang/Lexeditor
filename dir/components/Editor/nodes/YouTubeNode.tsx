@@ -17,7 +17,6 @@ import type {
   NodeKey,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import {BlockWithAlignableContents} from '@lexical/react/LexicalBlockWithAlignableContents';
 import {
@@ -149,8 +148,8 @@ export class YouTubeNode extends DecoratorBlockNode {
   }
 
   getTextContent(
-    _includeInert?: boolean | undefined,
-    _includeDirectionless?: false | undefined,
+    // _includeInert?: boolean | undefined,
+    // _includeDirectionless?: false | undefined,
   ): string {
     return `https://www.youtube.com/watch?v=${this.__id}`;
   }

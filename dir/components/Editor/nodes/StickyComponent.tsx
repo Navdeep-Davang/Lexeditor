@@ -7,7 +7,6 @@
  */
 
 import type {LexicalEditor, NodeKey} from 'lexical';
-import type {JSX} from 'react';
 
 import './StickyNode.css';
 

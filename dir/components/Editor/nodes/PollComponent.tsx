@@ -7,7 +7,6 @@
  */
 
 import type {Option, Options, PollNode} from './PollNode';
-import type {JSX} from 'react';
 
 import './PollNode.css';
 
@@ -74,7 +73,9 @@ function PollOptionComponent({
           ref={checkboxRef}
           className="PollNode__optionCheckbox"
           type="checkbox"
-          onChange={(e) => {
+          onChange={(
+            // e
+          ) => {
             withPollNode((node) => {
               node.toggleVote(option, clientID);
             });

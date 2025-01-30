@@ -7,7 +7,7 @@
  */
 
 import type {
-  EditorConfig,
+  // EditorConfig,
   LexicalEditor,
   LexicalNode,
   LexicalUpdateJSON,
@@ -16,7 +16,6 @@ import type {
   SerializedLexicalNode,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import {$setSelection, createEditor, DecoratorNode} from 'lexical';
 import * as React from 'react';
@@ -101,7 +100,9 @@ export class StickyNode extends DecoratorNode<JSX.Element> {
     };
   }
 
-  createDOM(config: EditorConfig): HTMLElement {
+  createDOM(
+    // config: EditorConfig
+  ): HTMLElement {
     const div = document.createElement('div');
     div.style.display = 'contents';
     return div;
@@ -123,7 +124,9 @@ export class StickyNode extends DecoratorNode<JSX.Element> {
     writable.__color = writable.__color === 'pink' ? 'yellow' : 'pink';
   }
 
-  decorate(editor: LexicalEditor, config: EditorConfig): JSX.Element {
+  decorate(
+    // editor: LexicalEditor, config: EditorConfig
+  ): JSX.Element {
     return createPortal(
       <Suspense fallback={null}>
         <StickyComponent

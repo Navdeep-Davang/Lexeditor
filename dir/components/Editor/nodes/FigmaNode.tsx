@@ -14,7 +14,6 @@ import type {
   NodeKey,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import {BlockWithAlignableContents} from '@lexical/react/LexicalBlockWithAlignableContents';
 import {
@@ -100,8 +99,8 @@ export class FigmaNode extends DecoratorBlockNode {
   }
 
   getTextContent(
-    _includeInert?: boolean | undefined,
-    _includeDirectionless?: false | undefined,
+    // _includeInert?: boolean | undefined,
+    // _includeDirectionless?: false | undefined,
   ): string {
     return `https://www.figma.com/file/${this.__id}`;
   }

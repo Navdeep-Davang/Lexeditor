@@ -1,6 +1,5 @@
 'use client';
 
-import type { JSX } from 'react';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical';
 import PlaygroundEditorTheme from '../Editor/themes/PlaygroundEditorTheme';
@@ -11,6 +10,8 @@ import Editor from '../Editor';
 import Settings from '../Editor/Settings';
 import TypingPerfPlugin from '../Editor/plugins/TypingPerfPlugin';
 import DocsPlugin from '../Editor/plugins/DocsPlugin';
+import { FlashMessageContext } from '../Editor/context/FlashMessageContext';
+import PlaygroundNodes from '../Editor/nodes/PlaygroundNodes';
 
 function $prepopulatedRichText() {
   const root = $getRoot();
@@ -29,6 +30,7 @@ export default function LexicalEditor(): JSX.Element {
   const initialConfig = {
     editorState: $prepopulatedRichText,
     namespace: 'LexicalEditor',
+    nodes: [...PlaygroundNodes],
     theme: PlaygroundEditorTheme,
     onError: (error: Error) => {
       console.error('Lexical Editor Error:', error);
@@ -36,19 +38,25 @@ export default function LexicalEditor(): JSX.Element {
   };
 
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <SharedHistoryContext>
-        <TableContext>
-          <ToolbarContext>
-            <div className="editor-container">
-              <Editor />
-              <Settings />
-              <DocsPlugin />
-              <TypingPerfPlugin />
-            </div>
-          </ToolbarContext>
-        </TableContext>
-      </SharedHistoryContext>
-    </LexicalComposer>
+    // Playground App
+    <FlashMessageContext>
+      {/* App  */}
+      <LexicalComposer initialConfig={initialConfig}>
+        <SharedHistoryContext>
+          <TableContext>
+            <ToolbarContext>
+              <div className="editor-container">
+                <Editor />
+                <Settings />
+                <DocsPlugin />
+                <TypingPerfPlugin />
+              </div>
+            </ToolbarContext>
+          </TableContext>
+        </SharedHistoryContext>
+      </LexicalComposer>
+
+    </FlashMessageContext>
+    
   );
 }

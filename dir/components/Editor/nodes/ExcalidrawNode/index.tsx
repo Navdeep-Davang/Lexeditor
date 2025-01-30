@@ -17,7 +17,6 @@ import type {
   SerializedLexicalNode,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import {DecoratorNode} from 'lexical';
 import * as React from 'react';
@@ -178,7 +177,9 @@ export class ExcalidrawNode extends DecoratorNode<JSX.Element> {
     self.__height = height;
   }
 
-  decorate(editor: LexicalEditor, config: EditorConfig): JSX.Element {
+  decorate(
+    // editor: LexicalEditor, config: EditorConfig
+  ): JSX.Element {
     return (
       <Suspense fallback={null}>
         <ExcalidrawComponent

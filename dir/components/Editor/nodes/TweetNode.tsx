@@ -17,7 +17,6 @@ import type {
   NodeKey,
   Spread,
 } from 'lexical';
-import type {JSX} from 'react';
 
 import {BlockWithAlignableContents} from '@lexical/react/LexicalBlockWithAlignableContents';
 import {
@@ -185,8 +184,8 @@ export class TweetNode extends DecoratorBlockNode {
   }
 
   getTextContent(
-    _includeInert?: boolean | undefined,
-    _includeDirectionless?: false | undefined,
+    // _includeInert?: boolean | undefined,
+    // _includeDirectionless?: false | undefined,
   ): string {
     return `https://x.com/i/web/status/${this.__id}`;
   }
